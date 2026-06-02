@@ -1,36 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
     <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Student Management System</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">All Student</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Add Student</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Student Management System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Add Student</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <h3 class="m-4">All Student</h3>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-auto mb-4">
+            <div class="text-center">
+                <span>
+                    Copyright &copy; <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                </span>
+            </div>
+        </footer>
+    </nav>
     <h1>
         Hello World!
     </h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
