@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
 </head>
 
@@ -14,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-             <i class="fa-solid fa-graduation-cap fa-lg"></i>   Student Management System</a>
+                <i class="fa-solid fa-graduation-cap fa-lg"></i> Student Management System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,11 +27,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                        <i class="fa-solid fa-list fa-lg"></i> All Student</a>
+                            <i class="fa-solid fa-list fa-lg"></i> All Student</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                        <i class="fa-solid fa-plus fa-lg"></i> Add Student</a>
+                            <i class="fa-solid fa-plus fa-lg"></i> Add Student</a>
                     </li>
                 </ul>
             </div>
@@ -45,7 +47,7 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                               <div class="table-responsive"> 
+                            <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -59,26 +61,62 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      {% for student in students %}
-                                      <tr>
-                                        <td>{{ student.student_number }}</td>
-                                        <td>{{ student.first_name }}</td>
-                                        <td>{{ student.last_name }}</td>
-                                        <td>{{ student.email }}</td>
-                                        <td>{{ student.field_of_study }}</td>
-                                        <td>{{ student.gpa }}</td>
-                                        <td>ACTIONS</td>
-                                      </tr>
-                                      {% endfor %}
+                                        {% for student in students %}
+                                        <tr>
+                                            <td>{{ student.student_number }}</td>
+                                            <td>{{ student.first_name }}</td>
+                                            <td>{{ student.last_name }}</td>
+                                            <td>{{ student.email }}</td>
+                                            <td>{{ student.field_of_study }}</td>
+                                            <td>{{ student.gpa }}</td>
+                                            <td>ACTIONS</td>
+                                            <td>
+                                                <button type="button" class="btn btn-success me-1"
+                                                    href="{% url 'view_student' student.id %}" data-bs-toggle="modal"
+                                                    data-bs-target="#myModal{{student.id}}">
+                                                    <i class="fa-solid fa-circle-info fa-lg"></i>
+                                                </button>
+                                                <div class="modal" id="myModal{{student.id}}" tabindex="-1" aria-labelledby="myModelLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Modal title</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    fdprocessedid="bufqvf">
+                                                                    <span aria-hidden="true"></span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <ul class="list-unstyled">
+                                                                    <li>Student Number: <strong>{{ student.last_number }}</strong></li>
+                                                                    <li>First Name: <strong>{{ student.first_name }}</strong></li>
+                                                                    <li>Last Name: <strong>{{ student.last_name }}</strong></li>
+                                                                    <li>Email: <strong>{{ student.email }}</strong></li>
+                                                                    <li>Field of Study: <strong>{{student.field_of_study}}</strong></li>
+                                                                    <li>GPA: <strong>{{student.gpa}}</strong></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary"
+                                                                    data-bs-dismiss="modal"
+                                                                    fdprocessedid="vwj7y">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
                                     </tbody>
-                                </table>   
-                                </div>
+                                </table>
+                            </div>
                             </p>
                         </div>
                     </div>
                     {% else %}
-                     <h5 class="alert alert-primary ms-4 me-4">No Student Record</h5>
-                    {% endif %} 
+                    <h5 class="alert alert-primary ms-4 me-4">No Student Record</h5>
+                    {% endif %}
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -94,7 +132,8 @@
         <footer class="mt-auto mb-4">
             <div class="text-center">
                 <span>
-                    Copyright &copy; <script>
+                    Copyright &copy;
+                    <script>
                         document.write(new Date().getFullYear())
                     </script>
                 </span>
