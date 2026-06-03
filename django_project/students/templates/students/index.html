@@ -38,6 +38,21 @@
             <h3 class="m-4">All Student</h3>
             <div class="row">
                 <div class="col-12">
+                    {% if students %}
+                    <div class="card bg-light ms-4 me-4 mb-4">
+                        <div class="card-header">
+                            <i class="fa-solid fa-list fa-lg">Student Records</i>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                               <div class="table-responsive">    
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    {% else %}
+                     <h5 class="alert alert-primary ms-4 me-4">No Student Record</h5>
+                    {% endif %} 
                     <div class="card" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
